@@ -27,38 +27,27 @@ namespace TodoAPI.Controllers
         public ActionResult Token(LoginRequest request)        {
             if(!String.IsNullOrEmpty(request.username) && !String.IsNullOrEmpty(request.password))
             {
-                if(_context.users.ToList().Count ==0)
+                var user = _context.users.Where(x => x.username == request.username &&
+                x.pwd == getHash(request.password)).SingleOrDefault();
+
+                if(user != null)
                 {
-                    User auser = new User
-                    {
-                        username = "admin",
-                        pwd = getHash("admin"),
-                        fullname = "teo",
-                        email = "asdas@asd.com",
-                        Ilock = false,
-                        Idelete = false,
-                        Rol_id = 1
-                       
-                    };
-                    _context.users.Add(auser);
-                    _context.SaveChanges();
-                }
-                if(request.username=="admin" && request.password == "admin")
-                {
-                    var claimData = new[] { new Claim(ClaimTypes.Name, "username") };
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567891234560"));
-                var singingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
-                var token = new JwtSecurityToken(
-                    issuer: "mysite.com",
-                    audience: "mysite.com",
-                    expires: DateTime.Now.AddMinutes(2),
-                    claims: claimData,
-                    signingCredentials: singingCredentials
-                    );
-                var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
+                    var claimData = new[] { new Claim(ClaimTypes.Name,request.username) };
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567891234560"));
+                    var singingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
+
+                    var token = new JwtSecurityToken(
+                        issuer: "mysite.com",
+                        audience: "mysite.com",
+                        expires: DateTime.Now.AddMinutes(2),
+                        claims: claimData,
+                        signingCredentials: singingCredentials
+                        );
+                    var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
                     return Ok(tokenstring);
+
                 }
-                
+
 
             }
 
