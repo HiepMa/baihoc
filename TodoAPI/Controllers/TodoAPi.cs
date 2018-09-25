@@ -13,7 +13,6 @@ namespace TodoAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class AuthController : ControllerBase
     {
         [HttpPost("Token")]

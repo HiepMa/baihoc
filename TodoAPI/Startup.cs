@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TodoAPI.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace TodoAPI
 {
@@ -65,9 +68,22 @@ namespace TodoAPI
             {
                 options.AddPolicy("AllowAllHeader", 
                     builder => {
-                        builder.WithOrigins("*").AllowAnyOrigin();
+                        builder.WithOrigins("*").AllowAnyOrigin().AllowAnyMethod().AllowCredentials();
                     });
             });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = "mysite.com",
+                    ValidAudience = "mysite.com",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567891234560"))
+                };
+            });
+            services.AddMvc();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -78,6 +94,7 @@ namespace TodoAPI
             }
 
             app.UseCors("AllowAllHeader");
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
