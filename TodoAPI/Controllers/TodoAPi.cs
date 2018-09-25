@@ -14,7 +14,12 @@ namespace TodoAPI.Controllers
         [HttpPost("Token")]
         public ActionResult Token()
         {
-            var token = new JwtSecurityToken();
+            var token = new JwtSecurityToken(
+                issuer: "mysite.com",
+                audience: "mysite.com",
+                expires: DateTime.Now.AddMinutes(2),
+
+                );
 
             return Ok("Hello");
         }
