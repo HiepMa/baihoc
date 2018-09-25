@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,6 +14,8 @@ namespace TodoAPI.Controllers
         [HttpPost("Token")]
         public ActionResult Token()
         {
+            var token = new JwtSecurityToken();
+
             return Ok("Hello");
         }
     }
