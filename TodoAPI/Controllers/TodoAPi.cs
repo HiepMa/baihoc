@@ -32,7 +32,7 @@ namespace TodoAPI.Controllers
                     User auser = new User
                     {
                         username = "admin",
-                        pwd = "admin",
+                        pwd = getHash("admin"),
                         fullname = "teo",
                         email = "asdas@asd.com",
                         Ilock = false,
