@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using TodoAPI.Models;
 using TodoAPI.Models.Requests;
 
 namespace TodoAPI.Controllers
@@ -16,8 +18,8 @@ namespace TodoAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly AuthController _context;
-        public AuthController(AuthController context)
+        private readonly TodoContext _context;
+        public AuthController(TodoContext context)
         {
             _context = context;
         }
@@ -25,12 +27,21 @@ namespace TodoAPI.Controllers
         public ActionResult Token(LoginRequest request)        {
             if(!String.IsNullOrEmpty(request.username) && !String.IsNullOrEmpty(request.password))
             {
-                if(_context.User.ToList().Count ==0)
+                if(_context.users.ToList().Count ==0)
                 {
                     User auser = new User
                     {
-                        username
-                    }
+                        username = "admin",
+                        pwd = "admin",
+                        fullname = "teo",
+                        email = "asdas@asd.com",
+                        Ilock = false,
+                        Idelete = false,
+                        Rol_id = 1
+                       
+                    };
+                    _context.users.Add(auser);
+                    _context.SaveChanges();
                 }
                 if(request.username=="admin" && request.password == "admin")
                 {
@@ -52,6 +63,14 @@ namespace TodoAPI.Controllers
             }
 
             return Unauthorized();
+        }
+        private string getHash(string text)
+        {
+            byte[] salt = new byte[128 / 8];
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: text, salt: salt, prf: KeyDerivationPrf.HMACSHA1, iterationCount: 10000, numBytesRequested: 256 / 8
+                ));
+            return hashed;
         }
     }
 }

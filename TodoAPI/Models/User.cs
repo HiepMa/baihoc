@@ -25,7 +25,7 @@ namespace TodoAPI.Models
         public bool Ilock {get;set;}
         [Column("ROL_ID")]
         public long Rol_id { get; set; }
-        [Column("IsDelete")]
+        [Column("IsDeleted")]
         public bool Idelete { get; set; }
         
 
