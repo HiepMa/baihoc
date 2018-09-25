@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using TodoAPI.Models.Requests;
 
 namespace TodoAPI.Controllers
 {
@@ -16,20 +17,29 @@ namespace TodoAPI.Controllers
     public class AuthController : ControllerBase
     {
         [HttpPost("Token")]
-        public ActionResult Token()
-        {
-            var claimData = new[] { new Claim (ClaimTypes.Name, "username" ) };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567891234560"));
-            var singingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
-            var token = new JwtSecurityToken(
-                issuer: "mysite.com",
-                audience: "mysite.com",
-                expires: DateTime.Now.AddMinutes(2),
-                claims: claimData,
-                signingCredentials: singingCredentials
-                );
-            var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
-            return Ok(tokenstring);
+        public ActionResult Token(LoginRequest request)        {
+            if(!String.IsNullOrEmpty(request.username) && !String.IsNullOrEmpty(request.password))
+            {
+                if(request.username=="admin" && request.password == "admin")
+                {
+                    var claimData = new[] { new Claim(ClaimTypes.Name, "username") };
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567891234560"));
+                var singingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
+                var token = new JwtSecurityToken(
+                    issuer: "mysite.com",
+                    audience: "mysite.com",
+                    expires: DateTime.Now.AddMinutes(2),
+                    claims: claimData,
+                    signingCredentials: singingCredentials
+                    );
+                var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
+                    return Ok(tokenstring);
+                }
+                
+
+            }
+
+            return Unauthorized();
         }
     }
 }
