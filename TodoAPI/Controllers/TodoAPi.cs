@@ -18,7 +18,7 @@ namespace TodoAPI.Controllers
         public ActionResult Token()
         {
             var claimData = new[] { new Claim (ClaimTypes.Name, "username" ) };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("123456789123456"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1234567891234560"));
             var singingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
             var token = new JwtSecurityToken(
                 issuer: "mysite.com",
@@ -27,8 +27,8 @@ namespace TodoAPI.Controllers
                 claims: claimData,
                 signingCredentials: singingCredentials
                 );
-
-            return Ok(token);
+            var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
+            return Ok(tokenstring);
         }
     }
 }
