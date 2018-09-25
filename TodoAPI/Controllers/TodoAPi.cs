@@ -44,7 +44,15 @@ namespace TodoAPI.Controllers
                         signingCredentials: singingCredentials
                         );
                     var tokenstring = new JwtSecurityTokenHandler().WriteToken(token);
-                    return Ok(tokenstring);
+                    var userResult = new LoginRespone
+                    {
+                        id = user.id,
+                        usr = user.username,
+                        fullname = user.fullname,
+                        token = "Bearer "+tokenstring
+
+                    };
+                    return Ok(userResult);
 
                 }
 
