@@ -11554,11 +11554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\TodoAPI\\TodoAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\baihoc\\TodoAPI\\TodoAPI.csproj",
       "projectName": "TodoAPI",
-      "projectPath": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\TodoAPI\\TodoAPI.csproj",
+      "projectPath": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\baihoc\\TodoAPI\\TodoAPI.csproj",
       "packagesPath": "C:\\Users\\Me\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\TodoAPI\\obj\\",
+      "outputPath": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\baihoc\\TodoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
