@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace baitap.Models
+namespace TodoAPI.Models
 {
     [Table("Users")]
     public class User

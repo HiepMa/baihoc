@@ -17,5 +17,7 @@ namespace TodoAPI.Models
         public DbSet<Item> Items { get; set; }
         public DbSet<Sale_Order> Sale_Orders { get; set; }
         public DbSet<Sale_Order_Item> Sale_Order_Items { get; set; }
+        public DbSet<User> users { get; set; } 
+        public DbSet <Role> roles { get; set; }
     }
 }

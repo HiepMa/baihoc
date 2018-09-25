@@ -16,10 +16,22 @@ namespace TodoAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly AuthController _context;
+        public AuthController(AuthController context)
+        {
+            _context = context;
+        }
         [HttpPost("Token")]
         public ActionResult Token(LoginRequest request)        {
             if(!String.IsNullOrEmpty(request.username) && !String.IsNullOrEmpty(request.password))
             {
+                if(_context.User.ToList().Count ==0)
+                {
+                    User auser = new User
+                    {
+                        username
+                    }
+                }
                 if(request.username=="admin" && request.password == "admin")
                 {
                     var claimData = new[] { new Claim(ClaimTypes.Name, "username") };
