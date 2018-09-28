@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,5 +22,7 @@ namespace TodoAPI.Models
         public decimal Price { get; set; }
         [Column("ITE_IMAGE")]
         public string Image { get; set; }
+        [NotMapped]
+        public IFormFile File { get; set; } // nhan file anh khong luu vao db
     }
 }
