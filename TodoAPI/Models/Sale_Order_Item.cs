@@ -24,7 +24,6 @@ namespace TodoAPI.Models
         public virtual Sale_Order Sale_Order { get; set; }
         [Column("ITE_ID")]
         public int IteNum { get; set; }
-        [ForeignKey("IteNum")]
-        public virtual Item Item { get; set; }
+
     }
 }

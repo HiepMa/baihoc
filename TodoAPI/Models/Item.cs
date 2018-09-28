@@ -13,7 +13,7 @@ namespace TodoAPI.Models
     {
         [Key]
         [Column("ITE_ID")]
-        public int ItemId { get; set; }
+        public long ItemId { get; set; }
         [Column("ITE_Name")]
         public string name { get; set; }
         [Column("ITE_DESCRIPTION")]
