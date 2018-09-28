@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TodoAPI.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TodoAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class ItemController : Controller
+    public class ItemController : ControllerBase
     {
+        private readonly TodoContext _context;
+        public ItemController (TodoContext context)
+        {
+            _context = context;
+        }
         // GET: api/<controller>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -27,9 +33,10 @@ namespace TodoAPI.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public IActionResult Create([FromBody]string value)
+        public IActionResult Create([FromForm] Item item)
         {
-
+            var file = item.File;
+            return Ok();
         }
 
         // PUT api/<controller>/5
