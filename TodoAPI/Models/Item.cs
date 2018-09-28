@@ -13,9 +13,13 @@ namespace TodoAPI.Models
         [Key]
         [Column("ITE_ID")]
         public int ItemId { get; set; }
+        [Column("ITE_Name")]
+        public string name { get; set; }
         [Column("ITE_DESCRIPTION")]
         public String Descript { get; set; }
         [Column("ITE_PRICE")]
         public decimal Price { get; set; }
+        [Column("ITE_IMAGE")]
+        public string Image { get; set; }
     }
 }
