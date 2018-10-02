@@ -63,13 +63,12 @@ namespace TodoAPI
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<TodoContext>(option => option.UseSqlServer(connectionString));
-
-            services.AddMvc();
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllHeader", 
                     builder => {
-                        builder.WithOrigins("*").AllowAnyOrigin().AllowAnyMethod().AllowCredentials();
+                        builder.WithOrigins("*").AllowAnyMethod().AllowCredentials().AllowAnyHeader();
                     });
             });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
