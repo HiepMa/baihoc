@@ -22,14 +22,10 @@ namespace TodoAPI.Models
         [Column("email")]
         public string email { get; set; }
         [Column("IsLocked")]
-        public bool Ilock {get;set;}
-        [Column("ROL_ID")]
-        public long Rol_id { get; set; }
+        public bool Ilock { get; set; }
         [Column("IsDeleted")]
         public bool Idelete { get; set; }
         
-
-        [ForeignKey("Rol_id")]
-        public virtual Role Role { get; set; }
+        
     }
 }

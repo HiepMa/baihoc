@@ -5523,7 +5523,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "r/ZCuiQarelx1SM6hPkqXWI1wfPNmUzZe08wYwMDGz5fkXUQQXoEqKe/K1ENZlbi6kS5adW5v1bp5IUtiJApRw==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
@@ -6311,7 +6311,7 @@
       ]
     },
     "Microsoft.IdentityModel.Logging/5.2.4": {
-      "sha512": "ftwC4hEI/LpKxgyXPvwWMSbd/GbhliWDIA90niq8SY8RtFw1hnJJ9f/7YiMQ96c0ibwGT2WEbS4IzvVFmhaiwA==",
+      "sha512": "RDA2J7T1xCcxWx/WBlgFory5DR70tLofODL/tJzWU2JvYmG/m2Az7sy3RFYZs8RE6aAG+i25h8ebb5Z8SDTkww==",
       "type": "package",
       "path": "microsoft.identitymodel.logging/5.2.4",
       "files": [
@@ -6375,7 +6375,7 @@
       ]
     },
     "Microsoft.IdentityModel.Tokens/5.2.4": {
-      "sha512": "rM/youDq83z+n1M4EojYLt++yZ4eOgs0vbkpZTufi+xNS0PS78SIyYve3KJq2++p9BLDFSx7zRr6/qsvI+gEjw==",
+      "sha512": "Ui9gfQLq5FHmnJK0teAH3vkpsy1sU6PFN2c0RbpgHW34+NPISQ5FQAdik4JyT/IvQXI8ZmQU+g94NErwdKYZZg==",
       "type": "package",
       "path": "microsoft.identitymodel.tokens/5.2.4",
       "files": [
@@ -8330,7 +8330,7 @@
       ]
     },
     "System.IdentityModel.Tokens.Jwt/5.2.4": {
-      "sha512": "pZ9xqpsL5yT5Yl+rBj9iHm2K++gKEqsQ+1vLQU9aFKDIc9ELZsaxApVqkujH62TG0oFLt8gFPH12n/zjaVWgYA==",
+      "sha512": "Vpj5gG29aSFDbfGd6s5G5fAt84GBATkQX26r94KnOoelfSBHUsbIVD676qhcGeB2/Q28hDhxE5gaKVYFP790zQ==",
       "type": "package",
       "path": "system.identitymodel.tokens.jwt/5.2.4",
       "files": [
@@ -8760,7 +8760,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "UR7CeFmrOy2WV/VJmi3Pj6mWpvqK5GzGVervGILS8kyM2wqegQL/C8ohVcQWfPjMsnDsIz+NLueRG+s9nEZYZg==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -11548,23 +11548,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Me\\.nuget\\packages\\": {},
+    "C:\\Users\\ghost\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\baihoc\\TodoAPI\\TodoAPI.csproj",
+      "projectUniqueName": "E:\\onlinetest\\baihoc\\TodoAPI\\TodoAPI.csproj",
       "projectName": "TodoAPI",
-      "projectPath": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\baihoc\\TodoAPI\\TodoAPI.csproj",
-      "packagesPath": "C:\\Users\\Me\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Me\\Desktop\\TodoAPI\\TodoAPI\\baihoc\\TodoAPI\\obj\\",
+      "projectPath": "E:\\onlinetest\\baihoc\\TodoAPI\\TodoAPI.csproj",
+      "packagesPath": "C:\\Users\\ghost\\.nuget\\packages\\",
+      "outputPath": "E:\\onlinetest\\baihoc\\TodoAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ghost\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

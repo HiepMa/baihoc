@@ -54,3 +54,17 @@ C:\Users\Me\Desktop\TodoAPI\TodoAPI\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoA
 C:\Users\Me\Desktop\TodoAPI\TodoAPI\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorTargetAssemblyInfo.cache
 C:\Users\Me\Desktop\TodoAPI\TodoAPI\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.dll
 C:\Users\Me\Desktop\TodoAPI\TodoAPI\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.pdb
+E:\onlinetest\baihoc\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.deps.json
+E:\onlinetest\baihoc\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.runtimeconfig.json
+E:\onlinetest\baihoc\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.runtimeconfig.dev.json
+E:\onlinetest\baihoc\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.dll
+E:\onlinetest\baihoc\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.pdb
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.csprojAssemblyReference.cache
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.csproj.CoreCompileInputs.cache
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorAssemblyInfo.cache
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorAssemblyInfo.cs
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.AssemblyInfoInputs.cache
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.AssemblyInfo.cs
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorTargetAssemblyInfo.cache
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.dll
+E:\onlinetest\baihoc\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.pdb
